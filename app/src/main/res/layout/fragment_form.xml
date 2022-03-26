@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ScrollView
@@ -25,12 +26,14 @@
                 android:textColor="@color/patentapp4"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.937"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.03" />
+                app:layout_constraintVertical_bias="0.007" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/nameOfProduct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -41,6 +44,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/alterName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -51,6 +55,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/nameOfProduct" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/vklad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,6 +66,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/alterName" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/proizvodnoeProizv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,6 +89,7 @@
                 tools:layout_editor_absoluteX="-44dp" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/author"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -93,6 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/authorTxt" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -103,6 +111,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/author" />
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/phoneNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -127,11 +136,13 @@
 
 
             <EditText
+                android:backgroundTint="#1E1D1D"
                 android:id="@+id/organization"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
                 android:hint="Введите..."
+                android:textColor="#4C4747"
                 android:imeOptions="actionNext"
                 android:textColorHint="#8A8484"
                 app:layout_constraintTop_toBottomOf="@+id/orgTxt" />
@@ -142,6 +153,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:backgroundTint="#1E1D1D"
                 android:hint="Обладатель имущественных прав (привести полные данные)"
                 android:imeOptions="actionNext"
                 android:textColorHint="#8A8484"
@@ -149,9 +161,11 @@
 
             <EditText
                 android:id="@+id/datePlace"
+                android:backgroundTint="#1E1D1D"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp"
+                android:textColor="#4C4747"
                 android:hint="Дата и место первого обнародования"
                 android:imeOptions="actionNext"
                 android:textColorHint="#8A8484"
@@ -180,51 +194,63 @@
                     app:layout_constraintTop_toBottomOf="@+id/datePlace" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
                     android:text="книги"
+                    android:textColor="#4C4747"
                     android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/checkboxTxt" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="фотокопия"
                     android:textSize="18sp" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="слайды"
                     android:textSize="18sp" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="чертежи"
                     android:textSize="18sp" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="рисунки"
                     android:textSize="18sp" />
 
                 <CheckBox
+                    android:backgroundTint="#1E1D1D"
                     android:id="@+id/checkbox6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="рисунки звуковая или визуальная запись"
                     android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/picture" />
@@ -259,6 +285,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="документ об уплате регистрационного сбора"
                     android:textSize="18sp"
                     app:layout_constraintTop_toBottomOf="@+id/checkbox6" />
@@ -268,6 +295,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="копия паспорта"
                     android:textSize="18sp" />
 
@@ -276,6 +304,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="документ об освобождении от уплаты регистрационного сбора или уменьшении его размера"
                     android:textSize="18sp" />
 
@@ -284,6 +313,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="копия документа о передаче имущественных прав"
                     android:textSize="18sp" />
 
@@ -292,6 +322,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="доверенность на представителя"
                     android:textSize="18sp" />
 
@@ -300,6 +331,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="7dp"
+                    android:textColor="#4C4747"
                     android:text="перевод на кыргызский или русский язык"
                     android:textSize="18sp" />
 
@@ -311,12 +343,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="7dp"
+                android:textColor="#4C4747"
                 android:text=" Я, настоящим гарантирую, что при создании данного произведения не были нарушены авторские и смежные права других лиц. Указанные в заявлении сведения являются верными и соответствуют депонируемым материалам."
                 android:textSize="18sp"
                 app:layout_constraintTop_toBottomOf="@id/documents" />
 
             <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/good"
+                android:id="@+id/goodTxt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="30dp"
@@ -325,6 +358,29 @@
                 android:textColor="#4C4747"
                 android:textSize="18sp"
                 app:layout_constraintTop_toBottomOf="@+id/guaranty" />
+
+            <EditText
+                android:id="@+id/good"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:hint="Введите:"
+                android:backgroundTint="#1E1D1D"
+                android:textColor="#4C4747"
+                android:imeOptions="actionNext"
+                android:textColorHint="#8A8484"
+                app:layout_constraintTop_toBottomOf="@+id/goodTxt" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/patentapp5"
+                android:textColor="@color/white"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="20dp"
+                android:text="Подать заявление"
+                app:layout_constraintTop_toBottomOf="@id/good"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

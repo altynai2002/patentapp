@@ -21,10 +21,11 @@ class FormFragment: Fragment(R.layout.fragment_form) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentFormBinding.bind(view)
 
-//        binding.apply {
-//            loginBtn.setOnClickListener {
-//                listener.onClick("login")
-//            }
+        binding.apply {
+            btn.setOnClickListener {
+                listener.onClick("main")
+            }
+        }
 //            registrationBtn.setOnClickListener {
 //                listener.onClick("register")
 //            }

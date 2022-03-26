@@ -21,7 +21,9 @@
         android:padding="20px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/roundstyle"
         android:text="Регистрация"
+        android:backgroundTint="@color/white"
         android:textSize="20sp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
@@ -30,6 +32,8 @@
         android:id="@+id/loginBtn"
         android:layout_margin="60px"
         android:padding="20px"
+        android:background="@drawable/roundstyle"
+        android:backgroundTint="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Войти"

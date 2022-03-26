@@ -16,15 +16,6 @@ class MainActivity : AppCompatActivity(), OnClick {
         setContentView(binding.root)
         initFragment()
 
-//        if (preferences.getEmail("EMAIL") == ""){
-//            supportFragmentManager.beginTransaction()
-//                .add(R.id.fragment_container, RegFragment())
-//                .commit()
-//        } else {
-//            supportFragmentManager.beginTransaction()
-//                .add(R.id.fragment_container, LoginFragment())
-//                .commit()
-//        }
     }
 
     override fun onClick(frId: String) {
@@ -45,11 +36,19 @@ class MainActivity : AppCompatActivity(), OnClick {
                     .replace(R.id.fragment_container, RegFragment())
                     .commit()
             }
+            "main" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, MainFragment())
+                    .commit()
+            }
         }
 
-//        supportFragmentManager.beginTransaction()
-//            .add(R.id.fragment_container, MainFragment())
-//            .commit()
+    }
+
+    private fun initFragment() {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, AuthFragment())
+                .commit()
     }
 
     override fun onObject() {
@@ -59,10 +58,38 @@ class MainActivity : AppCompatActivity(), OnClick {
             .commit()
     }
 
-
-    private fun initFragment() {
+    override fun onClickPublications() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragment_container, AuthFragment())
+            .replace(R.id.fragment_container, PublicationsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickPublicServices() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, PublicServicesFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickInnovations() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, InnovationsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickAbout() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, AboutUsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickSearch() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, SearchFragment())
+            .addToBackStack(null)
             .commit()
     }
 

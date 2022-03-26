@@ -2,8 +2,10 @@ package com.pro.patentapp
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pro.patentapp.databinding.FragmentMainBinding
 
@@ -16,8 +18,6 @@ class MainFragment: Fragment(R.layout.fragment_main) {
         get() = arrayOf(
             "Объекты авторского права",
             "Оъекты смежных прав",
-            "Изобретения",
-            "Полезные модели",
             "Промышленные образцы",
             "Традиционные знания",
             "Товарные знаки и обслуживания",
@@ -26,6 +26,8 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             "Топологии интегральных микросхем",
             "Селекционные достижения",
             "Программы для ЭВМ и баз данных",
+            "Полезные модели",
+            "Изобретения"
         )
 
     override fun onAttach(context: Context) {
@@ -36,7 +38,26 @@ class MainFragment: Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMainBinding.bind(view)
+
+        binding.toolbar.inflateMenu(R.menu.menu)
+        binding.toolbar.setOnMenuItemClickListener {
+
+            when (it.itemId) {
+                R.id.aboutMenu -> listener.onClickAbout()
+                R.id.publications -> listener.onClickPublications()
+                R.id.publicServices -> listener.onClickPublicServices()
+                R.id.innovations -> listener.onClickInnovations()
+                else -> {
+                    Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+                }
+            }
+            true
+        }
         setupGridView()
+
+        binding.search.setOnClickListener {
+            listener.onClickSearch()
+        }
     }
 
     private fun setupGridView() {
@@ -47,6 +68,10 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             AdapterView.OnItemClickListener { parent, v, position, id ->
                 listener.onObject()
             }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

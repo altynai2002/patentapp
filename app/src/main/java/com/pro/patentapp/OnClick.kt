@@ -1,5 +1,6 @@
 package com.pro.patentapp
 
-interface OnButtonClicked {
+interface OnClick {
+    fun onObject()
     fun onClick(frId: String)
 }

@@ -9,11 +9,11 @@ import com.pro.patentapp.databinding.FragmentAuthBinding
 class AuthFragment: Fragment(R.layout.fragment_auth) {
     private var _binding: FragmentAuthBinding? = null
     private val binding get() = _binding!!
-    private lateinit var listener: OnButtonClicked
+    private lateinit var listener: OnClick
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        listener = context as OnButtonClicked
+        listener = context as OnClick
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.pro.patentapp.databinding.ActivityMainBinding
 
-class MainActivity : AppCompatActivity(), OnButtonClicked {
+class MainActivity : AppCompatActivity(), OnClick {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -38,27 +38,17 @@ class MainActivity : AppCompatActivity(), OnButtonClicked {
                 .replace(R.id.fragment_container, RegFragment())
                 .commit()
         }
-//        when (frId) {
-//            "login" -> {
-//                val register = supportFragmentManager.beginTransaction()
-//
-//
-//                    .replace(R.id.fragment_container, LoginFragment())
-//                    .commit()
-////                    val register = supportFragmentManager
-////                    .findFragmentById(R.id.fragment_container) as? LoginFragment
-//
-//            }
-//            "register" -> {
-////                val login = supportFragmentManager.beginTransaction()
-////                    .replace(R.id.fragment_container, RegFragment())
-////                    .commit()
-//                val register = supportFragmentManager
-//
-//                    .findFragmentById(R.id.fragment_container) as? RegFragment
-////                fragment2?.setText(text)
-//            }
-//        }
+
+//        supportFragmentManager.beginTransaction()
+//            .add(R.id.fragment_container, MainFragment())
+//            .commit()
+    }
+
+    override fun onObject() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, IntellectualPropertyFragment())
+            .addToBackStack(null)
+            .commit()
     }
 
 

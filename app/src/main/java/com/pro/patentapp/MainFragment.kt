@@ -18,8 +18,6 @@ class MainFragment: Fragment(R.layout.fragment_main) {
         get() = arrayOf(
             "Объекты авторского права",
             "Оъекты смежных прав",
-            "Изобретения",
-            "Полезные модели",
             "Промышленные образцы",
             "Традиционные знания",
             "Товарные знаки и обслуживания",
@@ -28,6 +26,8 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             "Топологии интегральных микросхем",
             "Селекционные достижения",
             "Программы для ЭВМ и баз данных",
+            "Полезные модели",
+            "Изобретения"
         )
 
     override fun onAttach(context: Context) {
@@ -44,18 +44,20 @@ class MainFragment: Fragment(R.layout.fragment_main) {
 
             when (it.itemId) {
                 R.id.aboutMenu -> listener.onClickAbout()
-
-            }
-
-            if (it.itemId == R.id.aboutMenu) {
-                Log.e("TAG", "click")
-                listener.onClickAbout()
-            } else {
-                Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+                R.id.publications -> listener.onClickPublications()
+                R.id.publicServices -> listener.onClickPublicServices()
+                R.id.innovations -> listener.onClickInnovations()
+                else -> {
+                    Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+                }
             }
             true
         }
         setupGridView()
+
+        binding.search.setOnClickListener {
+            listener.onClickSearch()
+        }
     }
 
     private fun setupGridView() {

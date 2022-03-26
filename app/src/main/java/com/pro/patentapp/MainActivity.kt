@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity(), OnClick {
         }
         else {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, RegFragment())
+                .replace(R.id.fragment_container, MainFragment())
                 .commit()
         }
 
@@ -75,6 +75,13 @@ class MainActivity : AppCompatActivity(), OnClick {
     override fun onClickAbout() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, AboutUsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickSearch() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, SearchFragment())
             .addToBackStack(null)
             .commit()
     }

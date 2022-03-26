@@ -7,4 +7,5 @@ interface OnClick {
     fun onClickPublications()
     fun onClickPublicServices()
     fun onClickInnovations()
+    fun onClickSearch()
 }

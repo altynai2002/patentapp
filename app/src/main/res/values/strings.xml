@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">patentapp</string>
+    <string name="click">CLICK</string>
+    <string name="this_item">THIS ITEM</string>
+    <string name="btn2">BTN2</string>
+    <string name="btn1">BTN1</string>
+    <string name="btn3">BTN3</string>
+    <string name="this_is_fragment">This is fragment 2 with ImageView</string>
+    <string name="this_is_fragment_1">This is fragment 1</string>
+    <string name="login_btn">Войти</string>
+    <string name="reg_btn">Регистрация</string>
 </resources>

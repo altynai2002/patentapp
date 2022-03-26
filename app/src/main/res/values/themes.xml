@@ -13,4 +13,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
+
+    <style name="BaseTextView" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="BlackPrimaryTextView" parent="BaseTextView">
+        <item name="android:textColor">@color/black</item>
+<!--        <item name="android:textColorHint">@color/ui_color_text_secondary</item>-->
+    </style>
+
+    <style name="BlackPrimaryTextView.14dp">
+        <item name="android:textSize">18sp</item>
+    </style>
 </resources>

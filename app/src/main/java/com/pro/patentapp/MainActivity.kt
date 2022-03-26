@@ -28,15 +28,23 @@ class MainActivity : AppCompatActivity(), OnClick {
     }
 
     override fun onClick(frId: String) {
-        if (frId == "login") {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, LoginFragment())
-                .commit()
-        }
-        else {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, RegFragment())
-                .commit()
+        when (frId) {
+            "login" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, LoginFragment())
+                    .commit()
+            }
+            "forms" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, FormFragment())
+                    .commit()
+
+            }
+            "register" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, RegFragment())
+                    .commit()
+            }
         }
 
 //        supportFragmentManager.beginTransaction()

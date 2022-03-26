@@ -1,17 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txt"
-        android:layout_width="wrap_content"
+        android:id="@+id/info"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="This is the screen of Intellectual Property"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="25dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="ОБЩАЯ ИНФОРМАЦИЯ"
+        android:textColor="@color/patentapp5"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintCircleRadius="50dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.145" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/databaseKG"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        android:textColor="@color/patentapp5"
+        android:text="НОРМАТИВНО-ПРАВОВАЯ БАЗА КР"
+        app:layout_constraintBottom_toTopOf="@id/fees"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/info" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/fees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="CБОРЫ"
+        android:textColor="@color/patentapp5"
+        app:layout_constraintBottom_toTopOf="@id/database"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/databaseKG" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/database"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:text="БАЗА ДАННЫХ"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        android:textColor="@color/patentapp5"
+        app:layout_constraintTop_toBottomOf="@id/fees"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/statistics"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:text="СТАТИСТИКА"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        android:textColor="@color/patentapp5"
+        app:layout_constraintTop_toBottomOf="@id/database"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/faq"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:gravity="center"
+        android:text="ЧАСТО ЗАДАВАЕМЫЕ ВОПРОСЫ"
+        android:padding="10dp"
+        android:background="@drawable/border"
+        android:textColor="@color/patentapp5"
+        app:layout_constraintTop_toBottomOf="@id/statistics"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/formsBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:padding="15dp"
+        android:text="ЗАПОЛНИТЬ ФОРМУ"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/patentapp5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/faq" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

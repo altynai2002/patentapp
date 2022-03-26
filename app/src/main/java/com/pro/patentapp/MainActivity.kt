@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
 
             if (preferences.getEmail("EMAIL") == ""){
                 supportFragmentManager.beginTransaction()
-                    .add(R.id.fragment_container, RegistFragment())
+                    .add(R.id.fragment_container, RegFragment())
                     .commit()
             } else {
                 supportFragmentManager.beginTransaction()

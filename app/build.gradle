@@ -8,6 +8,7 @@ android {
 
     viewBinding {
         enabled = true
+    }
 
     defaultConfig {
         applicationId "com.pro.patentapp"

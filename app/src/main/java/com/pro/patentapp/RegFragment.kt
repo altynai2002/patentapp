@@ -30,7 +30,7 @@ class RegFragment : Fragment(R.layout.fragment_reg) {
             dateOfIssue.setOnClickListener {
                 val datePickerDialog = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener{view, year, month, dayOfMonth ->
 
-                    dateOfIssue.setText("Date" + dayOfMonth + '/' + (month+1))
+                    dateOfIssue.setText( "$dayOfMonth/" + (month+1) + "/" + year)
 
                 }, mYear, mMonth, day)
                 datePickerDialog.show()
@@ -38,11 +38,16 @@ class RegFragment : Fragment(R.layout.fragment_reg) {
             }
 
             btnReg.setOnClickListener {
-                if (!isValidEmail(pin.text.toString())) {
-                    Toast.makeText(activity, "Неккоректная почта", Toast.LENGTH_SHORT).show()
+//                if (!isValidEmail(pin.text.toString())) {
+//                    Toast.makeText(activity, "Неккоректная почта", Toast.LENGTH_SHORT).show()
+                if (pin.length() != 14) {
+                    Toast.makeText(activity, "Неккоректный ПИН", Toast.LENGTH_SHORT).show()
                 } else {
-                    preferences.saveEmail(pin.text.toString())
+                    preferences.savePin(pin.text.toString())
                     preferences.savePassword(password.text.toString())
+                    preferences.saveName(name.text.toString())
+                    preferences.saveSurname(surname.text.toString())
+                    preferences.saveOtchestvo(otchestvo.text.toString())
                     requireActivity().supportFragmentManager.beginTransaction()
                         .replace(R.id.fragment_container, MainFragment())
                         .commit()
@@ -56,7 +61,7 @@ class RegFragment : Fragment(R.layout.fragment_reg) {
         _binding = null
     }
 
-    private fun isValidEmail(email: String): Boolean {
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    private fun isValidPin(pin: String): Boolean {
+        return !TextUtils.isEmpty(pin) && Patterns.EMAIL_ADDRESS.matcher(pin).matches()
     }
 }

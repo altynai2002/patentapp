@@ -21,7 +21,7 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val prefEmail = preferences.getEmail("EMAIL")
+        val prefPin = preferences.getPin("PIN")
         val prefPassword = preferences.getPassword("PASSWORD")
 
         pin = view.findViewById(R.id.pin)
@@ -32,23 +32,23 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
         password.addTextChangedListener(loginTextWatcher)
 
         btnLogin.setOnClickListener {
-            if (pin.text.toString() == prefEmail && password.text.toString() == prefPassword) {
+            if (pin.text.toString() == prefPin && password.text.toString() == prefPassword) {
 
                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
                 transaction.replace(R.id.fragment_container, MainFragment())
                 transaction.disallowAddToBackStack()
                 transaction.commit()
 
-            } else if (!isValidEmail(pin.text.toString())) {
-                Toast.makeText(activity, "Неккоректная почта", Toast.LENGTH_SHORT).show()
+            } else if (!isValidPin(pin.text.toString())) {
+                Toast.makeText(activity, "Неккоректный ПИН", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(activity, "Почта или пароль не совпадают", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun isValidEmail(email: String): Boolean {
-        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    private fun isValidPin(pin: String): Boolean {
+        return !TextUtils.isEmpty(pin)
     }
 
     private val loginTextWatcher = object :TextWatcher{

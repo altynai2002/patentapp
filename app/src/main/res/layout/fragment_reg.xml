@@ -6,9 +6,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:src="@drawable/logo"
         app:layout_constraintTop_toTopOf="parent"
@@ -16,22 +24,7 @@
         app:layout_constraintBottom_toTopOf="@id/txtReg"
         app:layout_constraintRight_toRightOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatTextView
-        android:id="@+id/txtReg"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:gravity="center"
-        android:text="Регистрация"
-        android:textColor="@color/patentapp3"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.263"
-        app:layout_constraintVertical_chainStyle="packed"
-        tools:layout_editor_absoluteX="16dp" />
-
-<!--    <com.google.android.material.textfield.TextInputLayout-->
+        <!--    <com.google.android.material.textfield.TextInputLayout-->
 <!--        android:id="@+id/edit_layout"-->
 <!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
 <!--        android:layout_width="match_parent"-->
@@ -60,7 +53,22 @@
 
 <!--    </com.google.android.material.textfield.TextInputLayout>-->
 
-    <androidx.appcompat.widget.AppCompatEditText
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtReg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:gravity="center"
+            android:text="Регистрация"
+            android:textColor="@color/patentapp3"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.22"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:layout_editor_absoluteX="-8dp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/pin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -94,7 +102,7 @@
         android:id="@+id/authority"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Орган выдачи"
+        android:hint="Орган выдачи паспорта"
         android:lines="1"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -108,41 +116,87 @@
         android:id="@+id/dateOfIssue"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Дата выдачи"
+        android:hint="Дата выдачи паспорта"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/authority"
+        app:layout_constraintBottom_toTopOf="@id/name"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Имя"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/dateOfIssue"
+        app:layout_constraintBottom_toTopOf="@id/surname"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Фамилия"
         android:lines="1"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:inputType="text"
         android:layout_margin="16dp"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintTop_toBottomOf="@id/authority"
-        app:layout_constraintBottom_toTopOf="@id/password"/>
+        app:layout_constraintTop_toBottomOf="@id/name"
+        app:layout_constraintBottom_toTopOf="@id/otchestvo"/>
 
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/otchestvo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Отчество если имеется"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/surname"
+        app:layout_constraintBottom_toTopOf="@id/password"/>
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Пароль"
+        android:layout_margin="16dp"
         android:lines="1"
         android:imeOptions="actionDone"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
         android:inputType="textPassword"
-        android:layout_margin="16dp"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintTop_toBottomOf="@id/dateOfIssue"/>
+        app:layout_constraintTop_toBottomOf="@id/otchestvo"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="40dp"
         android:background="@color/white"
         android:text="@string/reg_btn"
         android:textColor="@color/white"
+        app:layout_constraintVertical_chainStyle="packed"
         android:backgroundTint="@color/patentapp4"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@id/password" />
+        app:layout_constraintTop_toBottomOf="@id/password"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

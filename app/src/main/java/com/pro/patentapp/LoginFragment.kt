@@ -15,7 +15,7 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
     private val preferences get() = Injector.preferences
 
     private lateinit var btnLogin:AppCompatButton
-    private lateinit var email:AppCompatEditText
+    private lateinit var pin:AppCompatEditText
     private lateinit var password:AppCompatEditText
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -24,22 +24,22 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
         val prefEmail = preferences.getEmail("EMAIL")
         val prefPassword = preferences.getPassword("PASSWORD")
 
-        email = view.findViewById(R.id.email)
+        pin = view.findViewById(R.id.pin)
         password = view.findViewById(R.id.password)
         btnLogin = view.findViewById(R.id.btnLogin)
 
-        email.addTextChangedListener(loginTextWatcher)
+        pin.addTextChangedListener(loginTextWatcher)
         password.addTextChangedListener(loginTextWatcher)
 
         btnLogin.setOnClickListener {
-            if (email.text.toString() == prefEmail && password.text.toString() == prefPassword) {
+            if (pin.text.toString() == prefEmail && password.text.toString() == prefPassword) {
 
                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.fragment_container, HomeFragment())
+                transaction.replace(R.id.fragment_container, MainFragment())
                 transaction.disallowAddToBackStack()
                 transaction.commit()
 
-            } else if (!isValidEmail(email.text.toString())) {
+            } else if (!isValidEmail(pin.text.toString())) {
                 Toast.makeText(activity, "Неккоректная почта", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(activity, "Почта или пароль не совпадают", Toast.LENGTH_SHORT).show()
@@ -55,7 +55,7 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
 
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            val emailText = email.text.toString().trim()
+            val emailText = pin.text.toString().trim()
             val passwordText = password.text.toString().trim()
             btnLogin.isEnabled = emailText.isNotEmpty() && passwordText.isNotEmpty()
         }

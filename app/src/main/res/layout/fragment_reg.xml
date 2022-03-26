@@ -1,35 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/txtReg"
+        app:layout_constraintRight_toRightOf="parent"/>
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/txtReg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:gravity="center"
         android:layout_margin="16dp"
-        android:textColor="@color/teal_700"
-        android:layout_marginTop="220dp"
+        android:gravity="center"
         android:text="Регистрация"
-        app:layout_constraintTop_toTopOf="parent"/>
+        android:textColor="@color/patentapp3"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.263"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:layout_editor_absoluteX="16dp" />
+
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/edit_layout"-->
+<!--        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        app:helperText="*обязательно"-->
+<!--        app:helperTextTextColor="#E91E63"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        app:errorEnabled="true"-->
+<!--        android:textColorHint="@color/teal_700"-->
+<!--        app:errorIconDrawable="@drawable/ic_error"-->
+<!--        app:errorIconTint="@color/purple_500"-->
+<!--        app:startIconTint="@color/teal_700"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/pin">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:id="@+id/email"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="ПИН"-->
+<!--            android:lines="1"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textColorHint="@color/black"-->
+<!--            android:inputType="textEmailAddress"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/txtLogin"-->
+<!--            app:layout_constraintBottom_toTopOf="@id/password"/>-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/email"
+        android:id="@+id/pin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Email"
+        android:hint="ПИН"
         android:lines="1"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
+        android:maxLength="14"
         android:layout_margin="16dp"
         android:backgroundTint="@color/teal_700"
         app:layout_constraintTop_toBottomOf="@id/txtReg"
+        app:layout_constraintBottom_toTopOf="@id/id"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        android:hint="AN/ID"
+        android:inputType="textCapCharacters"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toTopOf="@id/authority"
+        app:layout_constraintTop_toBottomOf="@id/pin"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/authority"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Орган выдачи"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/id"
+        app:layout_constraintBottom_toTopOf="@id/dateOfIssue"/>
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/dateOfIssue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Дата выдачи"
+        android:lines="1"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:inputType="text"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/teal_700"
+        app:layout_constraintTop_toBottomOf="@id/authority"
         app:layout_constraintBottom_toTopOf="@id/password"/>
+
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/password"
@@ -43,7 +131,7 @@
         android:inputType="textPassword"
         android:layout_margin="16dp"
         android:backgroundTint="@color/teal_700"
-        app:layout_constraintTop_toBottomOf="@id/email"/>
+        app:layout_constraintTop_toBottomOf="@id/dateOfIssue"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnReg"
@@ -53,7 +141,7 @@
         android:background="@color/white"
         android:text="@string/reg_btn"
         android:textColor="@color/white"
-        android:backgroundTint="@color/teal_700"
+        android:backgroundTint="@color/patentapp4"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@id/password" />
 

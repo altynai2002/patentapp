@@ -1,5 +1,6 @@
 package com.pro.patentapp
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Patterns
@@ -7,6 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pro.patentapp.databinding.FragmentRegBinding
+import java.util.*
 
 class RegFragment : Fragment(R.layout.fragment_reg) {
     private var _binding: FragmentRegBinding? = null
@@ -18,17 +20,31 @@ class RegFragment : Fragment(R.layout.fragment_reg) {
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentRegBinding.bind(view)
-
+        val cal = Calendar.getInstance()
+        val mYear = cal.get(Calendar.YEAR)
+        val mMonth = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
 
         binding.apply {
+
+            dateOfIssue.setOnClickListener {
+                val datePickerDialog = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener{view, year, month, dayOfMonth ->
+
+                    dateOfIssue.setText("Date" + dayOfMonth + '/' + (month+1))
+
+                }, mYear, mMonth, day)
+                datePickerDialog.show()
+
+            }
+
             btnReg.setOnClickListener {
-                if (!isValidEmail(email.text.toString())) {
+                if (!isValidEmail(pin.text.toString())) {
                     Toast.makeText(activity, "Неккоректная почта", Toast.LENGTH_SHORT).show()
                 } else {
-                    preferences.saveEmail(email.text.toString())
+                    preferences.saveEmail(pin.text.toString())
                     preferences.savePassword(password.text.toString())
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, HomeFragment())
+                        .replace(R.id.fragment_container, MainFragment())
                         .commit()
                 }
             }

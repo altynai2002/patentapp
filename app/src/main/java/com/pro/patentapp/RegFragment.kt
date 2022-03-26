@@ -28,7 +28,7 @@ class RegFragment : Fragment(R.layout.fragment_reg) {
                     preferences.saveEmail(email.text.toString())
                     preferences.savePassword(password.text.toString())
                     requireActivity().supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment_container, HomeFragment())
+                        .replace(R.id.fragment_container, MainFragment())
                         .commit()
                 }
             }

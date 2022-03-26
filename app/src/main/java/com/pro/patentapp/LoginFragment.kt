@@ -35,7 +35,7 @@ class LoginFragment: Fragment(R.layout.fragment_login)  {
             if (email.text.toString() == prefEmail && password.text.toString() == prefPassword) {
 
                 val transaction = requireActivity().supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.fragment_container, HomeFragment())
+                transaction.replace(R.id.fragment_container, MainFragment())
                 transaction.disallowAddToBackStack()
                 transaction.commit()
 

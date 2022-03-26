@@ -51,11 +51,37 @@ class MainActivity : AppCompatActivity(), OnClick {
             .commit()
     }
 
+    override fun onClickPublications() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, PublicationsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickPublicServices() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, PublicServicesFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickInnovations() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, InnovationsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickAbout() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, AboutUsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
 
     private fun initFragment() {
         supportFragmentManager.beginTransaction()
             .add(R.id.fragment_container, AuthFragment())
             .commit()
     }
-
 }

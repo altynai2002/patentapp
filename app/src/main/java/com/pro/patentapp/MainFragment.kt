@@ -2,8 +2,10 @@ package com.pro.patentapp
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.AdapterView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pro.patentapp.databinding.FragmentMainBinding
 
@@ -36,6 +38,23 @@ class MainFragment: Fragment(R.layout.fragment_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentMainBinding.bind(view)
+
+        binding.toolbar.inflateMenu(R.menu.menu)
+        binding.toolbar.setOnMenuItemClickListener {
+
+            when (it.itemId) {
+                R.id.aboutMenu -> listener.onClickAbout()
+
+            }
+
+            if (it.itemId == R.id.aboutMenu) {
+                Log.e("TAG", "click")
+                listener.onClickAbout()
+            } else {
+                Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
+            }
+            true
+        }
         setupGridView()
     }
 
@@ -47,6 +66,10 @@ class MainFragment: Fragment(R.layout.fragment_main) {
             AdapterView.OnItemClickListener { parent, v, position, id ->
                 listener.onObject()
             }
+    }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

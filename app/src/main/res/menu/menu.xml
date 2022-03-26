@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/publications"
+        android:title="Публикации"
+        app:showAsAction="withText"/>
+
+    <item android:id="@+id/publicServices"
+        android:title="Государственные услуги"
+        app:showAsAction="withText"/>
+
+    <item android:id="@+id/innovations"
+        android:title="Инновации"
+        app:showAsAction="withText"/>
+
+    <item android:id="@+id/aboutMenu"
+        android:title="О нас"
+        app:showAsAction="withText"/>
+
+</menu>

@@ -43,6 +43,13 @@ class MainActivity : AppCompatActivity(), OnClick {
                     .replace(R.id.fragment_container, MainFragment())
                     .commit()
             }
+
+            "intelProp" -> {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, IPFragment())
+                    .addToBackStack(null)
+                    .commit()
+            }
         }
     }
 

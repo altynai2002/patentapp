@@ -4,12 +4,11 @@ import android.content.Context
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.pro.patentapp.databinding.FragmentFormBinding
-import com.pro.patentapp.databinding.FragmentProfileBinding
+import com.pro.patentapp.databinding.FragmentIpBinding
 
-class ProfileFragment: Fragment(R.layout.fragment_profile) {
+class IPFragment: Fragment(R.layout.fragment_ip) {
     private val preferences get() = Injector.preferences
-    private var _binding: FragmentProfileBinding? = null
+    private var _binding: FragmentIpBinding? = null
     private val binding get() = _binding!!
     private lateinit var listener: OnClick
 
@@ -20,16 +19,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        _binding = FragmentProfileBinding.bind(view)
+        _binding = FragmentIpBinding.bind(view)
 
-        val prefName = preferences.getName("NAME")
-
-        binding.apply {
-            name.text = prefName
-
-            intelProp.setOnClickListener {
-                listener.onClick("intelProp")
-            }
-        }
     }
 }

@@ -8,4 +8,5 @@ interface OnClick {
     fun onClickPublicServices()
     fun onClickInnovations()
     fun onClickSearch()
+    fun onClickProfile()
 }

@@ -47,6 +47,7 @@ class MainFragment: Fragment(R.layout.fragment_main) {
                 R.id.publications -> listener.onClickPublications()
                 R.id.publicServices -> listener.onClickPublicServices()
                 R.id.innovations -> listener.onClickInnovations()
+                R.id.profile -> listener.onClickProfile()
                 else -> {
                     Toast.makeText(activity, "Something went wrong", Toast.LENGTH_SHORT).show()
                 }

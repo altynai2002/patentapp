@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity(), OnClick {
             "login" -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, LoginFragment())
+                    .addToBackStack(null)
                     .commit()
             }
             "forms" -> {
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity(), OnClick {
             "register" -> {
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, RegFragment())
+                    .addToBackStack(null)
                     .commit()
             }
             "main" -> {
@@ -42,7 +44,6 @@ class MainActivity : AppCompatActivity(), OnClick {
                     .commit()
             }
         }
-
     }
 
     private fun initFragment() {
@@ -82,6 +83,13 @@ class MainActivity : AppCompatActivity(), OnClick {
     override fun onClickAbout() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, AboutUsFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+
+    override fun onClickProfile() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, ProfileFragment())
             .addToBackStack(null)
             .commit()
     }

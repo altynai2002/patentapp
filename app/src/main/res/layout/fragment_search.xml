@@ -12,6 +12,7 @@
         android:background="@drawable/roundstyle"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_margin="16dp"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/search_button"/>
@@ -22,11 +23,11 @@
         android:layout_height="wrap_content"
         android:text="search"
         android:textSize="18sp"
+        android:layout_marginLeft="16dp"
         android:background="@drawable/roundstyle"
         android:backgroundTint="@color/holo_blue_dark"
         android:textColor="@color/white"
         app:layout_constraintTop_toBottomOf="@id/search_edit_frame"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

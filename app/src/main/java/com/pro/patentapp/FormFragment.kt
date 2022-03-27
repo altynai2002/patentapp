@@ -3,6 +3,7 @@ package com.pro.patentapp
 import android.content.Context
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.pro.patentapp.databinding.FragmentAuthBinding
 import com.pro.patentapp.databinding.FragmentFormBinding
@@ -23,6 +24,7 @@ class FormFragment: Fragment(R.layout.fragment_form) {
 
         binding.apply {
             btn.setOnClickListener {
+                Toast.makeText(requireContext(), "Ваша заявка отправлена!", Toast.LENGTH_LONG).show()
                 listener.onClick("main")
             }
         }
